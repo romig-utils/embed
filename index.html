@@ -3,10 +3,10 @@
     const params = new Proxy(new URLSearchParams(window.location.search), {
       get: (searchParams, prop) => searchParams.get(prop),
     });
-    let value = params.v;
+    let value = params.val;
     url = new URL(window.location.href);
     
-    if (url.searchParams.has('v')) {
+    if (url.searchParams.has('val')) {
         document.getElementById('resultIframe').src = atob(decodeURIComponent(value));    
     }
 </script>
